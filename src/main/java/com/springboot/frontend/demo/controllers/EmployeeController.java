@@ -16,6 +16,11 @@ public class EmployeeController {
     }
     //handler method to handle list of employees and return model and view
 
+    @GetMapping("/")
+    public String landingPage() {
+        return "redirect:/employees";
+    }
+
     @GetMapping("/employees")
     public String listOfEmployees(Model model){
         model.addAttribute("employees",employeeService.getAllEmployees());
