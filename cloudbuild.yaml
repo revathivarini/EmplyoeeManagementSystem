@@ -1,4 +1,4 @@
 steps:
-  - name: gradle:7.4.0-jdk15
+  - name: gradle:7.4.0-jdk17
     entrypoint: gradle
     args: ['clean', 'build']
