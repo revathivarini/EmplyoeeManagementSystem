@@ -46,6 +46,7 @@
                  <th>Employee First Name</th>
                  <th>Employee Last Name</th>
                  <th>Employee Email</th>
+                 <th>Employee Rank</th>
                  <th>Actions</th>
              </tr>
          </thead>
@@ -55,6 +56,7 @@
                <td th:text = "${employee.firstName}"></td>
                 <td th:text = "${employee.lastName}"></td>
                 <td th:text = "${employee.email}"></td>
+                <td th:text = "${employee.rank}"></td>
                 <td>
                     <a th:href = "@{/employees/edit/{id}(id=${employee.id})}"
                     class="btn btn-primary">Update</a>
