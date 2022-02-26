@@ -23,7 +23,23 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee saveEmployee(Employee employee) {
+        employee.setRank(getRank(employee.getFirstName(), employee.getAddress()));
+
         return employeeRepository.save(employee);
+    }
+
+    private int getRank(String name, String address) {
+        if (address == null || address.equals("")) {
+            return  10;
+        }
+        String[] patterns = {"^[A-Ha-h].*$", "^[I-Qi-q].*$", "^[R-Zr-z].*$"};
+        for (int i = 0; i < patterns.length; i++) {
+            if (name.matches(patterns[i])) {
+
+                return i + 1;
+            }
+        }
+        return 0;
     }
 
     @Override
@@ -38,8 +54,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void deleteEmployeeById(Integer id) {
+
         employeeRepository.deleteById(id);
     }
+
 
 
 }
