@@ -11,15 +11,17 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String email;
+    private int rank;
 
     public Employee() {
     }
 
-    public Employee(String firstName, String lastName, String email) {
+    public Employee(String firstName, String lastName, String email, int rank) {
 
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.rank = rank;
     }
 
 
@@ -54,5 +56,13 @@ public class Employee {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getRank() {
+        return rank;
+    }
+
+    public void setRank(int rank) {
+        this.rank = rank;
     }
 }
