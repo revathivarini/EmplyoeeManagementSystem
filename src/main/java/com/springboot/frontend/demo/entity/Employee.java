@@ -13,6 +13,16 @@ public class Employee {
     private String email;
     private int rank;
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    private String address;
+
     public Employee() {
     }
 
